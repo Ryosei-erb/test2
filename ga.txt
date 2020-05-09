@@ -1,0 +1,494 @@
+
+.main-wrapper {
+  background-color: #F2F2F2;
+}
+
+/* 出品ページ */
+.form-title {
+  text-align: center;
+  font-size: 20px;
+}
+.image_file {
+  display: none;
+}
+.create-button:hover {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #00b7ce;
+}
+.label {
+  cursor: pointer;
+  i {
+    font-size: 100px;
+    width: 740px;
+    text-align: center;
+    color: black;
+  }
+}
+.create-button {
+  background-color: #00b7ce;
+  color: #ffffff;
+  font-size: 24px;
+  width: 400px;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 160px;
+  line-height: 36px;
+  border-radius: 5px;
+  border: 3px solid #00b7ce;
+}
+.formBox {
+  margin-left: 120px;
+  margin-right: 120px;
+  padding: 10px 0px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 15px 30px 20px 0px #9da2b7;
+  border-right: solid 2px black;
+  border-bottom: solid 2px black;
+}
+/* 出品ページ終わり */
+
+/* 詳細ページ */
+
+.productBox {
+  border-radius: 2px;
+  background-color: #ffffff;
+}
+
+.single-nameBox {
+  padding-top: 10px;
+  border-bottom: solid 1px #D3D3D3;
+}
+.single-priceBox {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #D3D3D3;
+}
+.price-label {
+  display: inline-block;
+  color: #808080;
+}
+.single-price {
+  display: inline-block;
+  font-size: 20px;
+  // color: #EB3228;
+  padding-left: 10px;
+}
+.single-description {
+  padding-top: 30px;
+  border-bottom: solid 1px #D3D3D3;
+}
+.single-pickup_timesBox {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #D3D3D3;
+}
+.pickup_times-label {
+  display: inline-block;
+  color: #808080;
+}
+.single-pickup_times {
+  display: inline-block;
+  padding-left: 10px;
+}
+.back-to-the-index {
+  padding-top: 61px;
+}
+.back-to-the-index a {
+  text-decoration: none;
+}
+.back-to-the-index p {
+  display: inline-block;
+  color: #C0C0C0;
+}
+.imageBox {
+  padding: 50px 50px 50px 30px;
+}
+.imageBox img {
+  width: auto;
+}
+
+.start-chat-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  background-color: #00b7ce;
+  color: #ffffff;
+  font-size: 20px;
+  width: 233px;
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  line-height: 48px;
+  // border-radius: 5px;
+  border: 3px solid #00b7ce;
+}
+.start-chat-button:hover {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #00b7ce;
+}
+.restart-chat-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  background-color: #00b7ce;
+  color: #ffffff;
+  font-size: 20px;
+  width: 233px;
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  line-height: 48px;
+  border: 3px solid #00b7ce;
+}
+.restart-chat-button:hover {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #00b7ce;
+}
+.like-you {
+  padding-top: 13px;
+}
+.attach-star {
+  display: inline-block;
+  color: #000000;
+  font-size: 22px;
+  padding-left: 3px;
+}
+
+.like-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  display: inline-block;
+  color: #808080;
+}
+
+.disattach-star {
+  display: inline-block;
+  color: #FFD700;
+  font-size: 19px;
+  padding-left: 3px
+}
+.like-count {
+  display: inline-block;
+  color: #808080;
+  padding-left: 6px;
+}
+
+.delete-button {
+  background-color: #e03448;
+  color: #ffffff;
+  font-size: 20px;
+  width: 233px;
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 12px;
+  line-height: 48px;
+  border: 3px solid #e03448;
+}
+.delete-button:hover {
+  text-decoration: none;
+  color: #e03448;
+  background-color: #ffffff;
+}
+/* 詳細ページ終わり */
+
+/* 一覧ページ */
+
+.product-space {
+  padding-top: 21px;
+}
+.product-space a {
+  text-decoration: none;
+}
+.product-name-price-space {
+  background-color: #ffffff;
+  border-left: solid 3px #ababab;
+  border-right: solid 3px #ababab;
+  border-bottom: solid 3px #ababab;
+}
+.product-name-space {
+  padding-top: 3px;
+  padding-left: 7px;
+  font-size: 16px;
+  color: black;
+}
+.product-price-space {
+  padding-left: 7px;
+  color: #ababab;
+  font-weight: bold;
+  padding-bottom: 3px;
+  font-size: 24px;
+}
+.product-space img {
+  width: 100%;
+  border-left: solid 3px #ababab;
+  border-right: solid 3px #ababab;
+  border-top: solid 3px #ababab;
+}
+.products-tab {
+  background-color: white;
+  padding: 10px 0;
+  padding-left: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: solid 6px #C0C0C0;
+}
+.product-lists {
+  background-color: #ffffff;
+}
+
+/* 一覧ページ終わり */
+
+/* チャットページ */
+
+.chat-product-name {
+  text-align: center;
+  font-size: 18px;
+  padding-top: 3px;
+}
+.chat-product-name-tag {
+  display: inline-block;
+}
+.chat-product-name-content {
+  display: inline-block;
+}
+
+.chat-user-name {
+  text-align: center;
+  font-size: 22px;
+}
+.chat-user-name-tag {
+  display: inline-block;
+}
+.chat-user-name-content {
+  display: inline-block;
+}
+
+.balloon-left {
+  padding: 10px 15px;
+  border: solid 1px #bbbbbb;
+  margin: 0 70px;
+  border-radius: 0 20px 20px 20px / 0 20px 20px 20px;
+  line-height: 31px;
+  text-align: center;
+}
+.balloon-right {
+  padding: 10px 15px;
+  border: solid 1px #bbbbbb;
+  margin: 0 70px;
+  border-radius: 20px 0 20px 20px / 20px 0 20px 20px;
+  background-color: #00b7ce;
+  color: #ffffff;
+  line-height: 31px;
+  text-align: center;
+}
+.user-icon-left {
+  float: left;
+  margin-right: 10px;
+}
+.user-icon-right {
+  float: right;
+  margin-right: 0px;
+}
+.message-one {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.message-form {
+  height: 80px;
+  margin: 10px 0;
+  padding: 13px 70px 0 70px;
+  border-top: 1px solid #bbbbbb;
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+.content {
+  float: left;
+  height: 66px;
+  width: 86%;
+  border: solid 1px #666666;
+}
+.chat-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  background-color: #00b7ce;
+  color: #ffffff;
+  font-size: 20px;
+  width: 70px;
+  display: block;
+  text-align: center;
+  line-height: 59px;
+  border: 3px solid #00b7ce;
+}
+/* チャットページ終わり */
+/* トップページ */
+
+.root {
+  position: relative;
+}
+.root-message-one {
+    color: white;
+    position: absolute;
+    font-size: 2em;
+    transform: translate(-50%, -50%);
+    top: 38%;
+    left: 50%;
+}
+.root-message-second {
+  color: white;
+  position: absolute;
+  font-size: 29px;
+  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 51%;
+}
+.root-link {
+  position: absolute;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  top: 53%;
+  left: 49%;
+  font-size: 20px;
+  color: white;
+}
+.root-icon {
+  position: absolute;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  top: 52%;
+  left: 54%;
+}
+.root-screen {
+  background-image: url("../images/platter-2009590_1280.jpg");
+  background-postion: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+.root-screen::before {
+  content: "";
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* sold */
+.sold-imageBox {
+  padding: 50px 50px 50px 30px;
+  position: relative;
+}
+.sold-imageBox p {
+  position: absolute;
+  color: #D2D2D2;
+  top: 250px;
+  left: 120px;
+  font-size: 46px;
+}
+.sold-imageBox img {
+  width: auto;
+}
+.sold-index-imageBox {
+  position: relative;
+}
+.sold-index-imageBox p {
+  position: absolute;
+  color: #D2D2D2;
+  top: 120px;
+  left: 30px;
+  font-size: 30px;
+}
+/* sold終わり  */
+
+/* map */
+#map {
+  height: 600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.single-product-locationBox {
+  background-color: #ffffff;
+}
+.map-tab {
+  background-color: white;
+  padding: 10px 0;
+  // box-shadow: 15px 30px 20px 0px #9da2b7;
+  // border-right: solid 2px black;
+  padding-left: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: solid 6px #C0C0C0;
+}
+/* map end */
+
+/* header */
+.navbar {
+  border-bottom: solid 3px #00b7ce;
+}
+.icon-header {
+  font-size: 31px;
+  padding-left: 6px;
+  color: #00b7ce;
+}
+
+.logout-link {
+  padding-top: 3px;
+  padding-left: 20px;
+}
+.product-index-link {
+  padding-top: 3px;
+  padding-left: 20px;
+}
+
+.push-product-link {
+  padding-top: 3px;
+  margin-left: 550px;
+}
+.else-product-index-link {
+  padding-top: 3px;
+  margin-left: 550px;
+}
+.signin-link {
+  padding-top: 3px;
+  padding-left: 20px;
+}
+.signup-link {
+  padding-top: 3px;
+  padding-left: 20px;
+}
+/* header end */
