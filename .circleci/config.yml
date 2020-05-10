@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/php
+      - image: circleci/php:7.2-node-browsers
       - image: circleci/mysql:5.7
 
       # Specify service dependencies here if necessary
@@ -22,24 +22,10 @@ jobs:
 
     steps:
       - checkout
-
       # Install PHP Extension
       - run: sudo docker-php-ext-install zip pdo_mysql
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "composer.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
       - run: composer install -n --prefer-dist
-
-      - save_cache:
-          paths:
-            - ./vendor
-          key: v1-dependencies-{{ checksum "composer.json" }}
-
       # run seeding
       - run: php artisan migrate
       - run: php artisan db:seed
