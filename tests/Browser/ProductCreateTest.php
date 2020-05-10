@@ -25,10 +25,11 @@ class ProductCreateTest extends DuskTestCase
                     ->type("description", "de")
                     ->type("pickup_times", "p")
                     ->type("price", 10)
+                    ->type("address", "tokyo")
                     ->press("出品する")
                     ->pause(1000)
                     ->assertPathIs("/products")
-                    ->screenshot("test11");
+                    ->screenshot("test33");
         });
     }
 

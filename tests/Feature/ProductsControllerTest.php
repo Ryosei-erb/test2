@@ -23,6 +23,7 @@ class ProductsControllerTest extends TestCase
             "pickup_times" => "pm",
             "price" => 100,
             "user_id" => 2,
+            "address" => "tokyo"
         ]);
     }
 
@@ -53,6 +54,7 @@ class ProductsControllerTest extends TestCase
             "price" => 100,
             "user_id" => $user->id,
             "image" => $image,
+            "address" => "tokyo"
         ];
         $this->withoutExceptionHandling();
         $this->assertDatabaseMissing("products", $data);

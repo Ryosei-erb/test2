@@ -20,6 +20,7 @@ class ProductShowTest extends DuskTestCase
             "pickup_times" => "pm",
             "price" => 100,
             "user_id" => 1,
+            "address" => "tokyo"
         ]);
     }
 
