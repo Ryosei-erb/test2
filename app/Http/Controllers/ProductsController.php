@@ -34,7 +34,6 @@ class ProductsController extends Controller
                 endif;
             endforeach;
         endif;
-
         //お気に入り機能
         $favorite = [];
         if (Auth::check()):
