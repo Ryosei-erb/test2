@@ -13,8 +13,8 @@ jobs:
 
     environment:
       - APP_DEBUG: true
-      - APP_ENV: ${APP_ENV}
-      - APP_KEY: ABCDEF123ERD456EABCDEF123ERD456E
+      - APP_ENV: local
+      - APP_KEY: base64:2p4Px7Fane6jUi1d0gau2ltrqN+aAxOs/3mugoZMCYc=
       - DB_CONNECTION: circle_test
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
