@@ -13,7 +13,6 @@ jobs:
       - run:
           name: Setup Laravel
           command: |
-            cp .env.circleci .env
             docker-compose run app php artisan key:generate
             docker-compose run app php artisan migrate:refresh --seed
       - run:
