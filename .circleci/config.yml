@@ -31,6 +31,19 @@ jobs:
       - run: php artisan migrate
       - run: php artisan db:seed
 
+       - run: php artisan dusk:chrome-driver 72
+
       # run tests!
       - run: php ./vendor/bin/phpunit
-      - run: php artisan dusk
+      - run:
+          name: Start Chrome Driver
+          command: ./vendor/laravel/dusk/bin/chromedriver-linux
+          background: true
+      - run:
+          name: Run Laravel Server
+          command: php artisan serve
+          background: true
+      - run:
+          name: Run Laravel Dusk Tests
+          command: php artisan dusk
+      

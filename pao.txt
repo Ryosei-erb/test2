@@ -1,0 +1,2 @@
+- run: php ./vendor/bin/phpunit
+- run: php artisan dusk
