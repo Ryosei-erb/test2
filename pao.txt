@@ -1,3 +1,26 @@
+versin: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Setup docker
+          command: |
+            docker-compose up -d --build
+            docker-compose exec app composer create-project --prefer-dist "laravel/laravel=7.0"
+      - run:
+          name: Setup Laravel
+          command: |
+            docker-compose exec app php artisan migrate
+            docker-compose exec app php artisan dusk:chrome-driver 81
+
+      - run:
+          name: Run Test
+          command: |
+            docker-compose exec app vendor/bin/phpunit
+
+
 - run:
     name: Start Chrome Driver
     command: |

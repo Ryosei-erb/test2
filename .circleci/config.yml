@@ -12,10 +12,8 @@ jobs:
       - run:
           name: Setup Laravel
           command: |
-            docker-compose exec app php artisan migrate
-            docker-compose exec app php artisan dusk:chrome-driver 81
-
+            docker-compose exec app php artisan migrate:refresh --seed
       - run:
           name: Run Test
           command: |
-            docker-compose exec app vendor/bin/phpunit
+            docker-compose run app vendor/bin/phpunit
