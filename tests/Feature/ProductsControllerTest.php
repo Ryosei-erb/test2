@@ -44,7 +44,7 @@ class ProductsControllerTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function testCreateProductPath() {
+    public function testCreateProduct() {
         $user = factory(User::class)->create();
         $image = UploadedFile::fake()->image('image.jpeg');
         $data = [

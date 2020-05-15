@@ -25,7 +25,11 @@
                         <a href="/logout" class="nav-link logout-link" style: "color: #666666;">ログアウト</a>
                     </li>
                 @else
-
+                    <li class="nav-item">
+                        <form class="form-horizontal" action="/signin" method="get">
+                            <input type="submit" name="" value="簡易ログイン">
+                        </form>
+                    </li>
                     <li class="nav-item">
                         <a href="/products" class="nav-link else-product-index-link" style: "color: #666666;">商品一覧</a>
                     </li>

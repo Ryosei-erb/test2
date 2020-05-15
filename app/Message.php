@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model
 {
+    public static $rules = array(
+        "content" => "required|string"
+    );
     public function user() {
       return $this->belongsTo("App\User");
     }

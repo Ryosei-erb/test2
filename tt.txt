@@ -1,4 +1,14 @@
+->assertSee("「お気に入り済み」")
+          ->assertDontSee("お気に入り登録")
+          ->press("「お気に入り済み」")
 
+->type("name", "sample")
+          ->type("description", "Lorem ipsum dolor sit amet, consectetur adipisicing elit,")
+          ->type("pickup_times", "pm")
+          ->type("price", 100)
+          ->type("address", "tokyo")
+          ->press("出品する")
+          ->screenshot("fie");
 
 
 # Download and cache dependencies

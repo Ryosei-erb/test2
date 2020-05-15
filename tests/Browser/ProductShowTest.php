@@ -2,7 +2,9 @@
 
 namespace Tests\Browser;
 
+use App\User;
 use App\Product;
+use GoogleMaps;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
@@ -31,6 +33,7 @@ class ProductShowTest extends DuskTestCase
                     ->assertSee("Lorem ipsum dolor sit amet, consectetur adipisicing elit,");
         });
     }
+
     public function testShowtoIndexLink() {
         $this->browse(function (Browser $browser) {
             $browser->visit("/products/" . $this->product->id)

@@ -39,14 +39,14 @@
                                             @csrf
                                             <div class="disattach-star"><i class="fas fa-star"></i></div>
                                             <input type="hidden" name="product_id" value="{{$product->id}}">
-                                            <input type="submit" class="like-button" value="「お気に入り済み」: {{$product->favorites->count()}}">
+                                            <input type="submit" class="like-button" name="お気に入り済み" value="「お気に入り済み」: {{$product->favorites->count()}}">
                                         </form>
                                     @else
                                         <form class="like-you" action="/favorites" method="post">
                                             @csrf
                                             <div class="attach-star"><i class="fas fa-star"></i></div>
                                             <input type="hidden" name="product_id" value="{{$product->id}}">
-                                            <input type="submit" class="like-button" value="お気に入り登録する: {{$product->favorites->count()}}">
+                                            <input type="submit" class="like-button" name="お気に入り登録" value="お気に入り登録する: {{$product->favorites->count()}}">
                                         </form>
                                     @endif
                                 @else

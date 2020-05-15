@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get("/", "HomesController");
+Route::get("/", "HomesController@index");
+Route::get("/signin", "HomesController@signin");
 Route::resource("products", "ProductsController", ["only" => ["index", "show", "create", "store"]]);
 Route::get("/products/{id}/sold", "ProductsController@sold");
 Route::post("/products/{id}/resale", "ProductsController@resale");

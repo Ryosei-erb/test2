@@ -8,6 +8,8 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    protected $table = "users";
+
     public function products() {
       return $this->hasMany("App\Product");
     }
