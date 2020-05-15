@@ -1,3 +1,15 @@
+- run:
+    name: Start Chrome Driver
+    command: |
+      docker-compose exec app ./vendor/laravel/dusk/bin/chromedriver-linux
+    background: true
+
+ - run:
+    name: Start Laravel Server
+    command: |
+      docker-compose exec app php artisan serve
+    background: true
+
 docker-compose exec app composer require laravel/ui
 docker-compose exec app php artisan ui vue --auth
 docker-compose exec db bash -c 'mysql -u${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE}'
