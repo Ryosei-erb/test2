@@ -11,38 +11,38 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mysql:9.4
 
-      environment:
-        - APP_DEBUG: true
-        - APP_ENV: local
-        - APP_KEY: base64:2p4Px7Fane6jUi1d0gau2ltrqN+aAxOs/3mugoZMCYc=
-        - APP_URL: http://localhost:8000
-        - DB_CONNECTION: circle_test
-        - MYSQL_ALLOW_EMPTY_PASSWORD: true
+    environment:
+      - APP_DEBUG: true
+      - APP_ENV: local
+      - APP_KEY: base64:2p4Px7Fane6jUi1d0gau2ltrqN+aAxOs/3mugoZMCYc=
+      - APP_URL: http://localhost:8000
+      - DB_CONNECTION: circle_test
+      - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
-        working_directory: ~/repo
+    working_directory: ~/repo
 
-        steps:
-          - checkout
-          # Install PHP Extension
-          - run: sudo docker-php-ext-install zip pdo_mysql
+    steps:
+      - checkout
+      # Install PHP Extension
+      - run: sudo docker-php-ext-install zip pdo_mysql
 
-          - run: composer install -n --prefer-dist
-          # run seeding
-          - run: php artisan migrate
-          - run: php artisan db:seed
+      - run: composer install -n --prefer-dist
+      # run seeding
+      - run: php artisan migrate
+      - run: php artisan db:seed
 
-          - run: php artisan dusk:chrome-driver 72
+      - run: php artisan dusk:chrome-driver 72
 
-          # run tests!
-          - run: php ./vendor/bin/phpunit
-          - run:
-             name: Start Chrome Driver
-             command: ./vendor/laravel/dusk/bin/chromedriver-linux
-             background: true
-          - run:
-             name: Run Laravel Server
-             command: php artisan serve
-             background: true
-          - run:
-             name: Run Laravel Dusk Tests
-             command: php artisan dusk
+      # run tests!
+      - run: php ./vendor/bin/phpunit
+      - run:
+         name: Start Chrome Driver
+         command: ./vendor/laravel/dusk/bin/chromedriver-linux
+         background: true
+      - run:
+         name: Run Laravel Server
+         command: php artisan serve
+         background: true
+      - run:
+         name: Run Laravel Dusk Tests
+         command: php artisan dusk
