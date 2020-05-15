@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: circleci/php:7.2-node-browsers
       - image: circleci/mysql:5.7
-    machine: true
     steps:
       - checkout
       - run:
