@@ -23,11 +23,12 @@ jobs:
             docker-compose exec app ./vendor/laravel/dusk/bin/chromedriver-linux
           background: true
 
-       - run:
+      - run:
           name: Start Laravel Server
           command: |
             docker-compose exec app php artisan serve
           background: true
+
       - run:
           name: Run Test
           command: |
