@@ -8,13 +8,11 @@ jobs:
           name: Setup docker
           command: |
             docker-compose down --volumes --rmi all
-            docker-compose build
-            docker-compose up -d
-            docker-compose exec app composer install
+            docker-compose up -d --build
+            docker-compose exec app composer create-project --prefer-dist "laravel/laravel=7.0"
       - run:
           name: Setup Laravel
           command: |
-            docker-compose exec app php artisan key:generate
             docker-compose exec db bash -c 'mysql -u${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE}'
             docker-compose exec app php artisan migrate
       - run:
