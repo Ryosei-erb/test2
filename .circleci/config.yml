@@ -14,6 +14,7 @@ jobs:
           name: Setup Laravel
           command: |
             docker-compose exec app php artisan key:generate
+            docker-compose exec db bash -c 'mysql -u${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE}'
             docker-compose exec app php artisan migrate
       - run:
           name: Run Test
