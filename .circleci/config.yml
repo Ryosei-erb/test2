@@ -9,12 +9,13 @@ jobs:
           command: |
             docker-compose build
             docker-compose up -d
-            docker-compose run app composer install
+            docker-compose exec app composer install
       - run:
           name: Setup Laravel
           command: |
-            docker-compose run app php artisan key:generate
+            docker-compose exec app php artisan key:generate
+            docker-compose exec app php artisan migrate
       - run:
           name: Run Test
           command: |
-            docker-compose run app vendor/bin/phpunit
+            docker-compose exec app vendor/bin/phpunit
