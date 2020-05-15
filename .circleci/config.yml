@@ -1,41 +1,22 @@
-version: 2
+versin: 2
 jobs:
   build:
-    dns:
-    - 127.0.0.1
-    docker:
-      # specify the version you desire here
-      - image: circleci/php:7.2-node-browsers
-      - image: circleci/mysql:5.7
-      - image: selenium/standalone-chrome:3.1.0
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mysql:9.4
-
-    environment:
-      - APP_DEBUG: true
-      - APP_ENV: local
-      - APP_KEY: base64:2p4Px7Fane6jUi1d0gau2ltrqN+aAxOs/3mugoZMCYc=
-      - APP_URL: http://localhost:8000
-      - DB_CONNECTION: circle_test
-      - MYSQL_ALLOW_EMPTY_PASSWORD: true
-
-    working_directory: ~/repo
-
+    machine: true
     steps:
       - checkout
-      # Install PHP Extension
-      - run: sudo docker-php-ext-install zip pdo_mysql
-
-      - run: composer install -n --prefer-dist
-      # run seeding
-      - run: php artisan migrate
-
-      # run tests!
-      - run: php ./vendor/bin/phpunit
-      - run: selenium-server
       - run:
-         name: Run Laravel Dusk Tests
-         command: php artisan dusk
+          name: Setup docker
+          command: |
+            docker-compose build
+            docker-compose up -d
+            docker-compose run app composer install
+      - run:
+          name: Setup Laravel
+          command: |
+            cp .env.circleci .env
+            docker-compose run app php artisan key:generate
+            docker-compose run app php artisan migrate:refresh --seed
+      - run:
+          name: Run Test
+          command: |
+            docker-compose run app vendor/bin/phpunit
