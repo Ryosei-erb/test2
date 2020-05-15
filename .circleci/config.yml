@@ -13,7 +13,7 @@ jobs:
           name: Setup Laravel
           command: |
             docker-compose exec app php artisan migrate
-            docker-compose exec app php artisan ui vue --auth
+            docker-compose exec app php artisan dusk:install
       - run:
           name: Run Test
           command: |
