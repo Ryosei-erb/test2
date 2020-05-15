@@ -13,7 +13,7 @@ jobs:
       - run:
           name: Setup Laravel
           command: |
-          cp .env .env
+            cp .env .env
             docker-compose exec app php artisan key:generate
             docker-compose exec db bash -c 'mysql -u${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE}'
             docker-compose exec app php artisan migrate
