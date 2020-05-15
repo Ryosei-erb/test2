@@ -1,6 +1,8 @@
 version: 2
 jobs:
   build:
+    dns:
+    - 127.0.0.1
     docker:
       # specify the version you desire here
       - image: circleci/php:7.2-node-browsers
