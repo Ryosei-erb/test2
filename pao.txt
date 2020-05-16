@@ -1,6 +1,26 @@
 versin: 2
 jobs:
   build:
+    docker:
+      - image: circleci/php:7.2-node-browsers
+      - image: circleci/mysql:5.7
+    environment:
+      - DB_CONNECTION: circle_test
+    working_directory: ~/project
+    steps:
+      - checkout
+      - run: sudo docker-php-ext-install zip pdo_mysql
+      - run: composer install -n --prefer-dist
+      - run:
+         command: chromedriver
+         background: true
+      - run: php artisan migrate
+      - run: vendor/bin/phpunit
+
+
+versin: 2
+jobs:
+  build:
     machine: true
     steps:
       - checkout

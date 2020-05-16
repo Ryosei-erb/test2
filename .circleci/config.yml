@@ -1,34 +1,17 @@
 versin: 2
 jobs:
   build:
-    docker:
-      - image: circleci/php:7.2-node-browsers
-      - image: circleci/mysql:5.7
+    machine: true
+    environment:
+      - DB_CONNECTION: circle_test
+    working_directory: ~/project
     steps:
       - checkout
+      - run: |
+          docker-compose up -d --build
+          docker-compose exec app composer create-project --prefer-dist "laravel/laravel=7.0"
       - run:
-          name: Setup docker
-          command: |
-            docker-compose up -d --build
-            docker-compose exec app composer create-project --prefer-dist "laravel/laravel=7.0"
-      - run:
-          name: Setup Laravel
-          command: |
-            docker-compose exec app php artisan migrate
-            docker-compose exec app php artisan dusk:chrome-driver 81
-      - run:
-          name: Start Chrome Driver
-          command: |
-            docker-compose exec app ./vendor/laravel/dusk/bin/chromedriver-linux
-          background: true
-
-      - run:
-          name: Start Laravel Server
-          command: |
-            docker-compose exec app php artisan serve
-          background: true
-
-      - run:
-          name: Run Test
-          command: |
-            docker-compose exec app vendor/bin/phpunit
+         command: chromedriver
+         background: true
+      - run: docker-compose exec app php artisan migrate
+      - run: docker-compose exec app vendor/bin/phpunit tests/Feature
