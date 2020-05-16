@@ -1,3 +1,7 @@
+- run:
+   command: chromedriver
+   background: true
+
 versin: 2
 jobs:
   build:

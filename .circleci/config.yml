@@ -10,8 +10,5 @@ jobs:
       - run: |
           docker-compose up -d --build
           docker-compose exec app composer create-project --prefer-dist "laravel/laravel=7.0"
-      - run:
-         command: chromedriver
-         background: true
       - run: docker-compose exec app php artisan migrate
       - run: docker-compose exec app vendor/bin/phpunit tests/Feature
